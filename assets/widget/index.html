@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+<script type="text/javascript">
+
+	//回调
+	window.uexOnload = function(type) {
+
+		//判断设备是否支持NFC回调
+		uexNFC.cbIsNFCSupport = function(opCode, dataType, data) {
+			alert("------cbIsNFCSupport------\n" + data);
+		}
+		
+	}
+	
+	//配置NFC
+	function configNFC() {
+		var json ="";
+		uexNFC.configNFC(JSON.stringify(json));
+	}
+	
+	
+</script>
+</head>
+
+<body>
+	<div class="tit">uex</div>
+	<div class="conbor">
+		<div class="consj">
+		
+			<span>isNFCSupport</span>
+			<input class="btn" type="button" value="判断设备是否支持NFC功能" onclick="uexNFC.isNFCSupport()" /><br /> <br />
+
+		</div>
+	</div>
+</body>
+</html>
